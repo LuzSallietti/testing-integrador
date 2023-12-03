@@ -53,11 +53,11 @@ public class OpenAccountTest {
         }
     }
 
-    /*@AfterEach
+    @AfterEach
     public void close() {
         RegisterPage registerPage = new RegisterPage(driver, wait);
         registerPage.close();
-    }*/
+    }
 
     @AfterAll
     public static void getReport() {

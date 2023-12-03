@@ -6,7 +6,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class ActivityAccountPage extends BasePage {
     private By overviewButton = By.xpath("//a[normalize-space()='Accounts Overview']");
     private By overviewMessage = By.xpath("//td[contains(text(),'*Balance includes deposits that may be subject to ')]");
-    private By selectedAccount = By.xpath("//a[normalize-space()='36654']");
+    private By selectedAccount = By.xpath("//a[normalize-space()='15453']");
     private By periodSelect = By.id("month");
     private By transactionSelect = By.id("transactionType");
     private By goButton = By.xpath("//input[@value='Go']");

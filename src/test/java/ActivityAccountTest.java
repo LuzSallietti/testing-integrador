@@ -39,11 +39,13 @@ public class ActivityAccountTest {
         ActivityAccountPage activityAccountPage = new ActivityAccountPage(driver, wait);
         try {
             activityAccountPage.login("lolacatala", "lola4561");
+            test.log(Status.INFO,"Login data sent");
             activityAccountPage.openOverviewClick();
             activityAccountPage.getOverviewMessage();
             Assertions.assertEquals(activityAccountPage.getOverviewMessage(), "*Balance includes deposits that may be subject to holds");
             test.log(Status.PASS, "Account overview successfully showed");
             activityAccountPage.enterAccount();
+            test.log(Status.INFO,"Activity month and type filters sent");
             activityAccountPage.selectActivity();
 
         } catch (AssertionError error) {

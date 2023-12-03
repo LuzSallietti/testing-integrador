@@ -40,6 +40,7 @@ public class OverviewAccountTest {
         try {
             overviewAccountPage.login("lolacatala", "lola4561");
             overviewAccountPage.openOverviewClick();
+            test.log(Status.INFO, "Login data sent");
             overviewAccountPage.getOverviewMessage();
             Assertions.assertEquals(overviewAccountPage.getOverviewMessage(), "*Balance includes deposits that may be subject to holds");
             test.log(Status.PASS, "Account overview successfully showed");
