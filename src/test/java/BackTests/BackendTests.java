@@ -28,6 +28,22 @@ public class BackendTests {
         extent.attachReporter(info);
     }
     @Test
+    @Tag("GET")
+    public void registerAccount (){
+        ExtentTest test = extent.createTest("Register Account Endpoint - BACK END - Successful Test");
+        test.log(Status.INFO, "Tests-Begin");
+
+        try {
+            Response resGetRegister = RestAssured.post("https://parabank.parasoft.com/parabank/register.htm");
+
+            Assertions.assertEquals(resGetRegister.statusCode(), 200);
+            test.log(Status.PASS, "Register Account Service/Endpoint available - Status code 200 received");
+        } catch (AssertionError error){
+            test.log(Status.FAIL, "Validation failed: " + error.getLocalizedMessage());
+            throw error;
+        }
+    }
+    @Test
     @Tag("POST")
     public void openSavingsAccount () {
         ExtentTest test = extent.createTest("Open Savings Account - BACK END - Successful Test");
